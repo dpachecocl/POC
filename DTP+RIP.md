@@ -1,4 +1,5 @@
 ## Configuracion de RTS1-A
+'''
 hostname RTS1-A
 username dpacheco password lesand2024
 enable secret lesand2024
@@ -25,8 +26,9 @@ ip dhcp pool V10
 ip dhcp pool V20
  network 192.168.1.0 255.255.255.0
  default-router 192.168.0.1
-
+'''
 ## Configuracion de RTS1-B
+'''
 hostname RTS1-B
 username dpacheco password lesand2024
 enable secret lesand2024
@@ -56,8 +58,9 @@ int g0/0.10
  ip helper-address 192.168.4.10
 int g0/0.20
  ip helper-address 192.168.4.10
-
+'''
 ## Configuracion de S1
+'''
 hostname S1
 vlan 10
 vlan 20
@@ -70,4 +73,4 @@ int g1/1
 int g1/2
  switchport mode access
  switchport access vlan 20
-
+'''
