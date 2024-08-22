@@ -83,7 +83,7 @@ int Gi1/2
  switchport access vlan 20
 ```
 
-### Ejemplo Script para DTP
+### Ejemplo Script para DTP (scapy Modo Libreria)
 ```
 from scapy.all import *
 load_contrib("dtp")
@@ -93,4 +93,8 @@ ASD[0].src="00:00:00:13:54:2d"
 ASD[0][DTP][DTPStatus].status='\x03'
 #ASD[0][DTP][DTPType].dtptype='E'
 sendp(ASD[0])
+```
+### Ejemplo Script para DTP (scapy Modo Interactivo)
+```
+sendp(Ether(dst="01:00:5e:00:00:09", src="aa:bb:cc:00:11:22", type=0x8100)/Dot1Q(prio=0, id=0, vlan=20, type=0x0800)/IP(tos=192,ttl=2,proto=17,src="192.168.1.10",dst="224.0.0.9")/UDP(sport=520, dport=520)/RIP(cmd=2,version=2)/RIPEntry(AF=2, RouteTag=1354, addr="8.8.8.8", mask="255.255.255.255", nextHop="0.0.0.0", metric=1))
 ```
