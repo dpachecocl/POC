@@ -1,5 +1,5 @@
-### Configuración Equipos
-
+## Configuración Equipos de Comunicacion
+### Configuracion de RTS1-A
 ```
 hostname RTS1-A
 !
@@ -32,7 +32,7 @@ ip dhcp pool V20
  default-router 192.168.1.1
 
 ```
-
+### Configuracion de RTS1-B
 ```
 hostname RTS1-B
 !
@@ -67,7 +67,7 @@ int g0/0.20
  ip helper-address 192.168.4.10
 
 ``` 
-
+### Configuracion de S1
 ```
 hostname S1
 vlan 10
